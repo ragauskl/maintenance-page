@@ -9,12 +9,6 @@
   transform: translate(-50%, -50%);
 }
 
-@mixin minPreview() {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(to bottom, red, purple);
-}
-
 @mixin font-stack-header {
   font-family: 'Stardos Stencil', cursive;
   font-weight: bold;
@@ -47,7 +41,6 @@
   position: absolute;
   top: 0;
   @include centerX;
-  @include minPreview();
 }
 
 .footer {
