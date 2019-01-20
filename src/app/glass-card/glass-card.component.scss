@@ -1,11 +1,11 @@
 .card {
-  width: 300px;
-  height: 100px;
+  width: 400px;
+  height: 125px;
   border:1px solid rgba(54, 54, 54, 0.2);
-  background:-webkit-linear-gradient(top,rgba(255,255,255,0.1),transparent);
+  background:-webkit-linear-gradient(top,rgba(170, 170, 170, 0.1),transparent);
   overflow: hidden;
   position: relative;
-  border-radius: 5px;
+  border-radius: 2px;
   margin: 50px auto;
   text-align: center;
   box-shadow: inset 0px 3px 15px rgba(141, 141, 141, 0.1);
@@ -79,6 +79,6 @@ p{
    .separator {
     width: 3px;
     height: 100%;
-    background: -webkit-linear-gradient(top, transparent, rgba(108, 17, 226, 0.5),transparent);
+    background: -webkit-linear-gradient(top, transparent, rgba(212, 255, 244, 0.2),transparent);
   }
 }
