@@ -1,19 +1,19 @@
-<div *ngIf="days || hours || minutes" class="card">
+<div *ngIf="countdownService.countdownActive" class="card">
   <div class="content">
     <div class="time">
-      <span>{{days}}</span>
+      <span>{{countdownService.days}}</span>
       <span>Days</span>
     </div>
     <div class="separator"></div>
 
     <div class="time">
-        <span>{{hours}}</span>
+        <span>{{countdownService.hours}}</span>
         <span>Hours</span>
     </div>
     <div class="separator"></div>
 
     <div class="time">
-        <span>{{minutes}}</span>
+        <span>{{countdownService.minutes}}</span>
         <span>Minutes</span>
     </div>
   </div>
