@@ -1,21 +1,24 @@
-<div *ngIf="countdownService.countdownActive" class="card">
-  <div class="content">
-    <div class="time">
+<div *ngIf="countdownService.countdownActive" #container class="card">
+  <div class="content" #inner>
+    <div class="time glass-cube">
       <span>{{countdownService.days}}</span>
       <span>Days</span>
     </div>
-    <div class="separator"></div>
 
-    <div class="time">
+    <div class="separator"></div>
+    <div class="time glass-cube">
         <span>{{countdownService.hours}}</span>
         <span>Hours</span>
     </div>
-    <div class="separator"></div>
 
-    <div class="time">
+    <div class="separator"></div>
+    <div class="time glass-cube">
         <span>{{countdownService.minutes}}</span>
         <span>Minutes</span>
     </div>
+
+    <div class="shine-wrapper">
+      <div class="shine"></div>
+    </div>
   </div>
-  <div class="shine"></div>
 </div>
