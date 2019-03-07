@@ -21,11 +21,9 @@ export class GlassCardComponent implements AfterViewInit {
       this.y = (e.offsetY - this._y) * -1
     },
     setOrigin: function (e: HTMLElement) {
-      this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2)
-      this._y = e.offsetTop + Math.floor(e.offsetHeight / 2)
-      console.log(this._x, this._y)
-    },
-    show: function () { console.log('(' + this.x + ', ' + this.y + ')') }
+      this._x = Math.floor(e.offsetWidth / 2)
+      this._y = Math.floor(e.offsetHeight / 2)
+    }
   }
   constructor (public countdownService: CountdownService) {}
 
@@ -35,8 +33,8 @@ export class GlassCardComponent implements AfterViewInit {
       const innerEl: HTMLElement = this.innerEl.nativeElement
       containerEl.onmouseenter = (event) => this.update(event)
       containerEl.onmouseleave = () => {
-        (this.innerEl.nativeElement as HTMLElement).style.transform = ''
-      ; (this.innerEl.nativeElement as HTMLElement).style.webkitTransform = ''
+        innerEl.style.transform = ''
+      ; innerEl.style.webkitTransform = ''
       }
       containerEl.onmousemove = (event) => {
         if (this.shouldUpdate()) this.update(event)
@@ -47,10 +45,10 @@ export class GlassCardComponent implements AfterViewInit {
   }
 
   update (event) {
-    const innerEl: HTMLElement = this.innerEl.nativeElement
+    const innerEl: HTMLElement = this.containerEl.nativeElement
     this.mouse.updatePosition(event)
     this.updateTransformStyle(
-      (this.mouse.y / innerEl.offsetHeight / 0.5).toFixed(2),
+      (this.mouse.y / innerEl.offsetHeight / 0.2).toFixed(2),
       (this.mouse.x / innerEl.offsetWidth / 0.5).toFixed(2)
     )
   }
@@ -58,9 +56,6 @@ export class GlassCardComponent implements AfterViewInit {
   updateTransformStyle (x, y) {
     const innerEl: HTMLElement = this.innerEl.nativeElement
     const style = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg)'
-    this.mouse.show()
-    console.log('rotateX(' + x + 'deg) rotateY(' + y + 'deg)')
-    console.log('------------------------')
     innerEl.style.transform = style
     innerEl.style.webkitTransform = style
   }
