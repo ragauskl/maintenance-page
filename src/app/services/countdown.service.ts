@@ -4,7 +4,7 @@ import * as moment from 'moment'
   providedIn: 'root'
 })
 export class CountdownService {
-  readonly endDate = moment('11npm /04/2019 21:00', 'DD/MM/YYYY HH:mm')
+  readonly endDate = moment('26/05/2019 21:00', 'DD/MM/YYYY HH:mm')
   days = 0
   hours = 0
   minutes = 0
